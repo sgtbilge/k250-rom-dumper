@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+
+# macOS / Editors
+.DS_Store
+*.swp
+*~
+.vscode/
+.idea/
+
+# Copyrighted ROM dumps, captures, and generated artifacts
+dumped_roms/
+hardware_dumps/
+combined_roms/
+ExportedWaveforms/
+*.syx
+*.bin
+*.wav
+*.csv
+*.lst
+*.sysex
+K250 Sound Block*/
+firmware/K250_Dumper.lst
+!firmware/K250_Dumper_U54.bin
+!firmware/K250_Dumper_U38.bin
+!firmware/K250_Dumper_full.bin
+!firmware/CHECKSUMS.txt
