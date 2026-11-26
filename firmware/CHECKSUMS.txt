@@ -1,0 +1,7 @@
+# Kurzweil K250 MIDI ROM Dumper Firmware Checksums
+# EPROM target: 2x 27C256 (32 KB each)
+# Targets: 274 menu entries across 26 groups (246 physical chips)
+
+K250_Dumper_U54.bin   size=32768  CS16=0xF017  SHA256=3b9a0895405fec65dbc1b7e01b71a18c2a7a8961de7722df249e2b3b32c7c137
+K250_Dumper_U38.bin   size=32768  CS16=0x00ED  SHA256=e14428d32f0ac634822d6a78d8bbfaa4c50ace7eb88df6ad8e93f844cb952475
+K250_Dumper_full.bin  size=65536  CS16=0xF104  SHA256=e60f8c6a26ec781148c2af96fb9eddb7841e0035397d95cc9b8f87a9d98c6d04

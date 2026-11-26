@@ -1,0 +1,51 @@
+name: Release Firmware & Package
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install package and test dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+
+      - name: Verify firmware binaries and run tests
+        run: |
+          k250-dump build --check --out-dir firmware
+          pytest -v
+
+      - name: Package release archive
+        run: |
+          mkdir -p release_assets
+          cp firmware/K250_Dumper_U54.bin release_assets/
+          cp firmware/K250_Dumper_U38.bin release_assets/
+          cp firmware/K250_Dumper_full.bin release_assets/
+          cp firmware/CHECKSUMS.txt release_assets/
+          (cd firmware && zip -r "../release_assets/k250-rom-dumper-firmware-${GITHUB_REF_NAME}.zip" K250_Dumper_U54.bin K250_Dumper_U38.bin K250_Dumper_full.bin CHECKSUMS.txt README.md)
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          files: |
+            release_assets/K250_Dumper_U54.bin
+            release_assets/K250_Dumper_U38.bin
+            release_assets/K250_Dumper_full.bin
+            release_assets/CHECKSUMS.txt
+            release_assets/k250-rom-dumper-firmware-*.zip
