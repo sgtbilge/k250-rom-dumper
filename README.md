@@ -96,7 +96,7 @@ k250-dump combine --in-dir ./dumped_roms --out-dir ./combined_roms
 k250-rom-dumper/
 ├── firmware/                  # Pre-built U54/U38 27C256 EPROMs + CHECKSUMS.txt
 ├── src/k250_rom_dumper/       # Standalone 68000 assembler, SysEx codec, MIDI backends, verifier, combiner, CLI
-├── tools/                     # Legacy-compatible wrappers + Sound Block Viterbi reconstructor & waveform exporter
+├── tools/                     # Legacy-compatible wrappers for the original script names
 ├── docs/                      # Hardware guide, SysEx protocol spec, ROM map, troubleshooting
 ├── tests/                     # Unit tests for firmware, protocol, catalog, verifier, combiner, and CLI
 └── pyproject.toml
@@ -110,7 +110,7 @@ k250-rom-dumper/
 - **[MIDI SysEx & Hardware Protocol](docs/PROTOCOL.md)** — Wire framing (`F0 7D 4B 32 50`), `CPSOUND` (`0x1B1000`) 2-bit LSB readback, `MC6840` 500 kHz baud clock, and Diagnostic Rev D LSB checksums.
 - **[K250 ROM Map & Factory Checksums](docs/ROM_MAP.md)** — Complete 6 MB Sound ROM + CPU OS 6.1 memory map, 1-Mbit quarter addressing, and all 248 factory checksums.
 - **[Troubleshooting](docs/TROUBLESHOOTING.md)** — `MIDI ERR ST:xx` diagnostics, MIDI interface reliability, alternate capture tools, and blank Sound Block detection.
-- **[Companion Tools](docs/LEGACY_TOOLS.md)** — `reconstruct_sound_blocks.py`, `export_waveforms.py`, and the legacy-compatible scripts in `tools/`.
+- **[Legacy Script Wrappers](docs/LEGACY_TOOLS.md)** — `build_rom_dumper.py` and `receive_rom_sysex.py`, kept in `tools/` with their original flags.
 
 ---
 

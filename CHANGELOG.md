@@ -15,6 +15,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Dump completeness and health verifier (`k250-dump verify`) with optional Sound Block blank-socket (`0xFF`) detection and JSON reporting.
 - 1-Mbit (128 KB) physical EPROM combiner and splitter (`k250-dump combine`, `k250-dump split`) and single-file inspector (`k250-dump info`).
 - Interactive guided workflow (`k250-dump wizard`).
-- Companion legacy reconstruction and waveform export tools in `tools/` (`reconstruct_sound_blocks.py`, `export_waveforms.py`, plus backwards-compatible wrappers).
-- Comprehensive hardware, protocol, ROM map, troubleshooting, and companion-tools documentation in `docs/`.
+- Backwards-compatible wrappers in `tools/` for the original `build_rom_dumper.py` and `receive_rom_sysex.py` scripts.
+- Comprehensive hardware, protocol, ROM map, troubleshooting, and legacy-wrapper documentation in `docs/`.
 - GitHub Actions CI and tag-triggered release workflows.
